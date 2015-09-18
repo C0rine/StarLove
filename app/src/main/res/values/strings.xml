@@ -1,6 +1,98 @@
 <resources>
-    <string name="app_name">StarLove</string>
+    <string name="app_name">Star Love</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="rate_options">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    
+
+
+    <string name="boba_name">Boba Fett</string>
+    <string name="boba_about">With his customized Mandalorian armor, deadly weaponry, 
+        and silent demeanor, Boba Fett was one of the most feared bounty hunters in the 
+        galaxy. A genetic clone of his “father,” bounty hunter Jango Fett, Boba learned 
+        combat and martial skills from a young age. Over the course of his career, which 
+        included contracts for the Empire and the criminal underworld, he became a legend.
+    </string>
+    <string name="boba_location">Kamino</string>
+    <string name="boba_gender">Male</string>
+    <string name="boba_height">1.83 m</string>
+    <string name="boba_lookingfor">A goodlooking bounty huntress.</string>
+
+
+
+    <string name="c3po_name">C-3PO</string>
+    <string name="c3po_about">C-3PO is a droid programmed for etiquette and protocol,
+        built by the heroic Jedi Anakin Skywalker, and a constant companion to astromech
+        R2-D2. Over the years, he was involved in some of the galaxy’s most defining moments
+        and thrilling battles -- and is fluent in over six million forms of communication.
+    </string>
+    <string name="c3po_location">Tatooine</string>
+    <string name="c3po_gender">Protocol Droid</string>
+    <string name="c3po_height">1.67 m</string>
+    <string name="c3po_lookingfor">Someone like R2D2, but more sexy.</string>
+
+
+
+    <string name="chewie_name">Chewbacca</string>
+    <string name="chewie_about">A legendary Wookiee warrior and Han Solo’s co-pilot aboard
+        the Millennium Falcon, Chewbacca was part of a core group of Rebels who restored
+        freedom to the galaxy. Known for his short temper and accuracy with a bowcaster,
+        Chewie also has a big heart -- and is unwavering in his loyalty to his friends.
+    </string>
+    <string name="chewie_location">Kashyyyk</string>
+    <string name="chewie_gender">Male</string>
+    <string name="chewie_height">2.28 m</string>
+    <string name="chewie_lookingfor">Someone who doesn't mind all the hair.</string>
+
+
+
+    <string name="leia_name">Princess Leia Organa</string>
+    <string name="leia_about">Princess Leia Organa was one of the Rebel Alliance’s greatest
+        leaders, fearless on the battlefield and dedicated to ending the tyranny of the Empire.
+        Daughter of Padmé Amidala and Anakin Skywalker, sister of Luke Skywalker, and with
+        a soft spot for scoundrels, Leia ranks among the galaxy’s great heroes.
+    </string>
+    <string name="leia_location">Alderaan</string>
+    <string name="leia_gender">Female</string>
+    <string name="leia_height">1.50 m</string>
+    <string name="leia_lookingfor">A guy that is not my brother and neither a fat slug
+        like Jabba the Hutt.</string>
+
+
+
+    <string name="vader_name">Darth Vader</string>
+    <string name="vader_about">Once a heroic Jedi Knight, Darth Vader was seduced by the
+        dark side of the Force, became a Sith Lord, and led the Empire’s eradication of the
+        Jedi Order. He remained in service of the Emperor -- the evil Darth Sidious -- for
+        decades, enforcing his Master’s will and seeking to crush the fledgling Rebel Alliance.
+        But there was still good in him…
+    </string>
+    <string name="vader_location">Death Star</string>
+    <string name="vader_gender">Male</string>
+    <string name="vader_height">2.03 m</string>
+    <string name="vader_lookingfor">People to join the dark side.</string>
+
+
+
+    <string name="padme_name">Padmé Amidala</string>
+    <string name="padme_about">Padmé Amidala was a courageous, hopeful leader, serving as
+        Queen and then Senator of Naboo -- and was also handy with a blaster. Despite her
+        ideals and all she did for the cause of peace, her secret, forbidden marriage to Jedi
+        Anakin Skywalker would prove to have dire consequences for the galaxy.
+    </string>
+    <string name="padme_location">Naboo</string>
+    <string name="padme_gender">Female</string>
+    <string name="padme_height">1.65 m</string>
+    <string name="padme_lookingfor">A brave Jedi.</string>
+
+
+
 </resources>
