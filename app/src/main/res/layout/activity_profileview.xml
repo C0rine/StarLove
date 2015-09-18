@@ -34,14 +34,17 @@
                 android:id="@+id/rate_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:background="#ffffff"
+                android:spinnerMode="dialog" />
 
             <Button
                 android:id="@+id/rate_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="rate"
-                android:background="#ffbf3e" />
+                android:background="#ffbf3e"
+                android:onClick="onSendRate"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -5,12 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class ProfileviewActivity extends AppCompatActivity {
+public class ProfileviewActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private ImageView profilepicture;
     private TextView profilename;
@@ -19,7 +24,10 @@ public class ProfileviewActivity extends AppCompatActivity {
     private TextView profilegender;
     private TextView profileheight;
     private TextView profilelookingfor;
+    private Spinner ratingspinner;
 
+    private String rating;
+    private Integer profilenumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +36,9 @@ public class ProfileviewActivity extends AppCompatActivity {
 
         Intent profileIntent = getIntent();
 
-        Integer picturenumber = profileIntent.getExtras().getInt("Picture");
+        profilenumber = profileIntent.getExtras().getInt("Picture");
         profilepicture = (ImageView) findViewById(R.id.profile_image);
-        switch (picturenumber){
+        switch (profilenumber){
             case 1: profilepicture.setImageResource(R.mipmap.bobafett);
                 break;
             case 2: profilepicture.setImageResource(R.mipmap.c3po);
@@ -69,6 +77,13 @@ public class ProfileviewActivity extends AppCompatActivity {
         profilelookingfor = (TextView) findViewById(R.id.lookingfor_content);
         profilelookingfor.setText(lookingfor);
 
+        ratingspinner = (Spinner) findViewById(R.id.rate_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.rate_options, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ratingspinner.setAdapter(adapter);
+        ratingspinner.setOnItemSelectedListener(this);
+
     }
 
     @Override
@@ -91,5 +106,28 @@ public class ProfileviewActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        rating = (String) parent.getItemAtPosition(position);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // don't need to do anything
+    }
+
+    public void onSendRate(View view) {
+
+        Intent goingBack = new Intent();
+        goingBack.putExtra("rating", rating);
+        goingBack.putExtra("profilenumber", profilenumber);
+
+        setResult(RESULT_OK, goingBack);
+        finish();
+
     }
 }

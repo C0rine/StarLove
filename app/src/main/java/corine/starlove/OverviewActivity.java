@@ -31,6 +31,8 @@ public class OverviewActivity extends AppCompatActivity {
     private ImageButton vaderButton;
     private TextView vaderRating;
 
+    private Integer profilenumber;
+    private String rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,36 @@ public class OverviewActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        profilenumber = data.getIntExtra("profilenumber", 1);
+        rating = data.getStringExtra("rating");
+
+        //bobaRating.setText(getString(R.string.c3po_name) + ratedname + rating);
+
+        if (profilenumber == 1){
+            bobaRating.setText("Rating: " + rating);
+        }
+        else if (profilenumber == 2){
+            c3poRating.setText("Rating: " + rating);
+        }
+        else if (profilenumber == 3){
+            chewieRating.setText("Rating: " + rating);
+        }
+        else if (profilenumber == 4){
+            leiaRating.setText("Rating: " + rating);
+        }
+        else if (profilenumber == 5){
+            padmeRating.setText("Rating: " + rating);
+        }
+        else if (profilenumber == 6){
+            vaderRating.setText("Rating: " + rating);
+        }
+
+
+    }
 
     public void openProfileBoba(View view) {
 
