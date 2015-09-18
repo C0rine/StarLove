@@ -15,24 +15,32 @@ public class OverviewActivity extends AppCompatActivity {
 
     private ImageButton bobaButton;
     private TextView bobaRating;
+    private String bobaRatingString = "Rating: none";
 
     private ImageButton c3poButton;
     private TextView c3poRating;
+    private String c3poRatingString = "Rating: none";
 
     private ImageButton chewieButton;
     private TextView chewieRating;
+    private String chewieRatingString = "Rating: none";
 
     private ImageButton leiaButton;
     private TextView leiaRating;
+    private String leiaRatingString = "Rating: none";
 
     private ImageButton padmeButton;
     private TextView padmeRating;
+    private String padmeRatingString = "Rating: none";
 
     private ImageButton vaderButton;
     private TextView vaderRating;
+    private String vaderRatingString = "Rating: none";
 
     private Integer profilenumber;
     private String rating;
+
+    private Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +64,42 @@ public class OverviewActivity extends AppCompatActivity {
 
         vaderButton = (ImageButton) findViewById(R.id.vader_button);
         vaderRating = (TextView) findViewById(R.id.vader_rating);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle){
+        super.onSaveInstanceState(bundle);
+
+        bundle.putString("ratingboba", bobaRatingString);
+        bundle.putString("ratingc3po", c3poRatingString);
+        bundle.putString("ratingchewie", chewieRatingString);
+        bundle.putString("ratingleia", leiaRatingString);
+        bundle.putString("ratingpadme", padmeRatingString);
+        bundle.putString("ratingvader", vaderRatingString);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle){
+        super.onRestoreInstanceState(bundle);
+
+        bobaRatingString = bundle.getString("ratingboba");
+        bobaRating.setText(bobaRatingString);
+
+        c3poRatingString = bundle.getString("ratingc3po");
+        c3poRating.setText(c3poRatingString);
+
+        chewieRatingString = bundle.getString("ratingchewie");
+        chewieRating.setText(chewieRatingString);
+
+        leiaRatingString = bundle.getString("ratingleia");
+        leiaRating.setText(leiaRatingString);
+
+        padmeRatingString = bundle.getString("ratingpadme");
+        padmeRating.setText(padmeRatingString);
+
+        vaderRatingString = bundle.getString("ratingvader");
+        vaderRating.setText(vaderRatingString);
+
     }
 
     @Override
@@ -90,24 +134,29 @@ public class OverviewActivity extends AppCompatActivity {
         //bobaRating.setText(getString(R.string.c3po_name) + ratedname + rating);
 
         if (profilenumber == 1){
-            bobaRating.setText("Rating: " + rating);
+            bobaRatingString = "Rating: " + rating;
+            bobaRating.setText(bobaRatingString);
         }
         else if (profilenumber == 2){
-            c3poRating.setText("Rating: " + rating);
+            c3poRatingString = "Rating: " + rating;
+            c3poRating.setText(c3poRatingString);
         }
         else if (profilenumber == 3){
-            chewieRating.setText("Rating: " + rating);
+            chewieRatingString= "Rating: " + rating;
+            chewieRating.setText(chewieRatingString);
         }
         else if (profilenumber == 4){
-            leiaRating.setText("Rating: " + rating);
+            leiaRatingString = "Rating: " + rating;
+            leiaRating.setText(leiaRatingString);
         }
         else if (profilenumber == 5){
-            padmeRating.setText("Rating: " + rating);
+            padmeRatingString = "Rating: " + rating;
+            padmeRating.setText(padmeRatingString);
         }
         else if (profilenumber == 6){
-            vaderRating.setText("Rating: " + rating);
+            vaderRatingString = "Rating: " + rating;
+            vaderRating.setText(vaderRatingString);
         }
-
 
     }
 
@@ -124,6 +173,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.boba_gender));
         openProfile.putExtra("Height", getString(R.string.boba_height));
         openProfile.putExtra("Lookingfor", getString(R.string.boba_lookingfor));
+        openProfile.putExtra("Rating", bobaRatingString);
 
         startActivityForResult(openProfile, result);
 
@@ -143,6 +193,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.c3po_gender));
         openProfile.putExtra("Height", getString(R.string.c3po_height));
         openProfile.putExtra("Lookingfor", getString(R.string.c3po_lookingfor));
+        openProfile.putExtra("Rating", c3poRatingString);
 
         startActivityForResult(openProfile, result);
 
@@ -161,6 +212,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.chewie_gender));
         openProfile.putExtra("Height", getString(R.string.chewie_height));
         openProfile.putExtra("Lookingfor", getString(R.string.chewie_lookingfor));
+        openProfile.putExtra("Rating", chewieRatingString);
 
         startActivityForResult(openProfile, result);
 
@@ -179,6 +231,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.leia_gender));
         openProfile.putExtra("Height", getString(R.string.leia_height));
         openProfile.putExtra("Lookingfor", getString(R.string.leia_lookingfor));
+        openProfile.putExtra("Rating", leiaRatingString);
 
         startActivityForResult(openProfile, result);
 
@@ -197,6 +250,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.padme_gender));
         openProfile.putExtra("Height", getString(R.string.padme_height));
         openProfile.putExtra("Lookingfor", getString(R.string.padme_lookingfor));
+        openProfile.putExtra("Rating", padmeRatingString);
 
         startActivityForResult(openProfile, result);
     }
@@ -214,6 +268,7 @@ public class OverviewActivity extends AppCompatActivity {
         openProfile.putExtra("Gender", getString(R.string.vader_gender));
         openProfile.putExtra("Height", getString(R.string.vader_height));
         openProfile.putExtra("Lookingfor", getString(R.string.vader_lookingfor));
+        openProfile.putExtra("Rating", vaderRatingString);
 
         startActivityForResult(openProfile, result);
     }

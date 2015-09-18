@@ -77,12 +77,22 @@ public class ProfileviewActivity extends AppCompatActivity implements AdapterVie
         profilelookingfor = (TextView) findViewById(R.id.lookingfor_content);
         profilelookingfor.setText(lookingfor);
 
+        rating = profileIntent.getExtras().getString("Rating");
+
         ratingspinner = (Spinner) findViewById(R.id.rate_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.rate_options, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ratingspinner.setAdapter(adapter);
         ratingspinner.setOnItemSelectedListener(this);
+
+        int index = 0;
+        for(int i = 0; i<ratingspinner.getCount(); i ++){
+            if (ratingspinner.getItemAtPosition(i).equals(rating)){
+                index = i;
+            }
+        }
+        ratingspinner.setSelection(index);
 
     }
 
