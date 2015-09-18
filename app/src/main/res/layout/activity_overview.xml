@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/Title"
+        android:src="@mipmap/title"
         />
 
     <LinearLayout
@@ -32,22 +32,24 @@
                 android:id="@+id/boba_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/BobaFett"
+                android:src="@mipmap/bobafett"
                 android:padding="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:foreground="#90000000" />
+                android:onClick="openProfileBoba"
+                />
 
             <TextView
+                android:id="@+id/boba_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Rating: none"
-                android:id="@+id/textView"
                 android:layout_gravity="center_horizontal|bottom"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:background="#90000000" />
 
         </FrameLayout>
 
@@ -60,23 +62,24 @@
                 android:id="@+id/c3po_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/C3PO"
+                android:src="@mipmap/c3po"
                 android:padding="0dp"
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="#ffffff"
-                android:foreground="#90000000" />
+                android:onClick="openProfileC3po"/>
 
             <TextView
+                android:id="@+id/c3po_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Rating: none"
-                android:id="@+id/textView2"
                 android:layout_gravity="center_horizontal|bottom"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:background="#90000000" />
         </FrameLayout>
 
     </LinearLayout>
@@ -95,23 +98,24 @@
             <ImageButton
                 android:id="@+id/chewbacca_button"
                 android:layout_width="wrap_content"
-                android:src="@mipmap/Chewbacca"
+                android:src="@mipmap/chewbacca"
                 android:layout_height="wrap_content"
                 android:padding="0dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:foreground="#90000000" />
+                android:onClick="openProfileChewie"/>
 
             <TextView
+                android:id="@+id/chewbacca_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Rating: none"
-                android:id="@+id/textView3"
                 android:layout_gravity="center_horizontal|bottom"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:background="#90000000" />
         </FrameLayout>
 
         <FrameLayout
@@ -124,23 +128,24 @@
                 android:id="@+id/leia_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/Leia"
+                android:src="@mipmap/leia"
                 android:padding="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:foreground="#90000000"
+                android:onClick="openProfileLeia"
                 />
 
             <TextView
+                android:id="@+id/leia_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/textView4"
                 android:layout_gravity="center_horizontal|bottom"
                 android:textColor="#ffffff"
-                android:text="Rating: none" />
+                android:text="Rating: none"
+                android:background="#90000000" />
         </FrameLayout>
 
     </LinearLayout>
@@ -160,22 +165,23 @@
                 android:id="@+id/padme_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/Padme"
+                android:src="@mipmap/padme"
                 android:padding="0dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:foreground="#90000000" />
+                android:onClick="openProfilePadme"/>
 
             <TextView
+                android:id="@+id/padme_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Rating: none"
-                android:id="@+id/textView5"
                 android:layout_gravity="center_horizontal|bottom"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:background="#90000000" />
         </FrameLayout>
 
         <FrameLayout
@@ -187,22 +193,23 @@
                 android:id="@+id/vader_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/Vader"
+                android:src="@mipmap/vader"
                 android:padding="0dp"
                 android:layout_weight="1"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:foreground="#90000000" />
+                android:onClick="openProfileVader"/>
 
             <TextView
+                android:id="@+id/vader_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Rating: none"
-                android:id="@+id/textView6"
                 android:layout_gravity="center_horizontal|bottom"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:background="#90000000" />
         </FrameLayout>
 
     </LinearLayout>

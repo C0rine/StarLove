@@ -1,16 +1,74 @@
 package corine.starlove;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class ProfileviewActivity extends AppCompatActivity {
+
+    private ImageView profilepicture;
+    private TextView profilename;
+    private TextView profileabout;
+    private TextView profilelocation;
+    private TextView profilegender;
+    private TextView profileheight;
+    private TextView profilelookingfor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profileview);
+
+        Intent profileIntent = getIntent();
+
+        Integer picturenumber = profileIntent.getExtras().getInt("Picture");
+        profilepicture = (ImageView) findViewById(R.id.profile_image);
+        switch (picturenumber){
+            case 1: profilepicture.setImageResource(R.mipmap.bobafett);
+                break;
+            case 2: profilepicture.setImageResource(R.mipmap.c3po);
+                break;
+            case 3: profilepicture.setImageResource(R.mipmap.chewbacca);
+                break;
+            case 4: profilepicture.setImageResource(R.mipmap.leia);
+                break;
+            case 5: profilepicture.setImageResource(R.mipmap.padme);
+                break;
+            case 6: profilepicture.setImageResource(R.mipmap.vader);
+                break;
+        }
+
+        String name = profileIntent.getExtras().getString("Name");
+        profilename = (TextView) findViewById(R.id.name_content);
+        profilename.setText(name);
+
+        String about= profileIntent.getExtras().getString("About");
+        profileabout = (TextView) findViewById(R.id.about_content);
+        profileabout.setText(about);
+
+        String location = profileIntent.getExtras().getString("Location");
+        profilelocation = (TextView) findViewById(R.id.location_content);
+        profilelocation.setText(location);
+
+        String gender = profileIntent.getExtras().getString("Gender");
+        profilegender = (TextView) findViewById(R.id.gender_content);
+        profilegender.setText(gender);
+
+        String height = profileIntent.getExtras().getString("Height");
+        profileheight = (TextView) findViewById(R.id.height_content);
+        profileheight.setText(height);
+
+        String lookingfor = profileIntent.getExtras().getString("Lookingfor");
+        profilelookingfor = (TextView) findViewById(R.id.lookingfor_content);
+        profilelookingfor.setText(lookingfor);
+
     }
 
     @Override
